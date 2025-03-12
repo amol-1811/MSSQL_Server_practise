@@ -21,19 +21,12 @@ SELECT * FROM sales.customers WHERE state = 'CA';
 SELECT * FROM sales.customers WHERE state='CA' ORDER BY first_name;
 
 --using GROUP BY
-SELECT city,COUNT (*) FROM sales.customers WHERE state = 'CA' GROUP BY city ORDER BY city;
+SELECT city,COUNT (*) FROM sales.customers 
+WHERE state = 'CA' 
+GROUP BY city 
+ORDER BY city;
 
 --using HAVING 
-SELECT
-    city,
-    COUNT (*)
-FROM
-    sales.customers
-WHERE
-    state = 'CA'
-GROUP BY
-    city
-HAVING
-    COUNT (*) > 10
-ORDER BY
-    city;
+SELECT city, COUNT (*) FROM sales.customers
+WHERE state = 'CA' GROUP BY city
+HAVING COUNT (*) > 10 ORDER BY city;
